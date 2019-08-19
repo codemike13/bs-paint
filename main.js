@@ -10,6 +10,9 @@ const canvasPixels = canvas.querySelectorAll("div");
 const brushMode = document.querySelector("#brushMode");
 const eraser = document.querySelector("#selectMode");
 const save = document.querySelector("#save")
+const saves = save.querySelectorAll("p")
+const historySection = document.querySelector("#history")
+const userInput = document.querySelector("#saveName")
 
 function fillCanvas() {
   for (let i = 1; i < 22500; i++) {
@@ -21,6 +24,7 @@ function fillCanvas() {
   }
 }
 fillCanvas();
+let history =[]
 ////////////////////// Click ACTIONS ////////////////////////////////
 
 fillButton.addEventListener("click", function() {
@@ -50,11 +54,28 @@ canvas.addEventListener("mouseover", function(event) {
 });
 
 save.addEventListener("click",function() {
+    const canvasPixels = canvas.querySelectorAll("div");
+    const newSave  = document.createElement("p")
+    const userInput = document.querySelector("#saveName")
+    const historySection = document.querySelector("#history")
+    newSave.innerText = userInput.value +" "+getCurrentDateAndTime();
+    history.push({
+        save : canvasPixels,
+        dateTime : getCurrentDateAndTime()
+    })
+    historySection.appendChild(newSave)
+})
 
+saves.addEventListener("click",function(event){
+const saves = save.querySelectorAll("p");
+canvas  
 })
 
 
 ///////////////////////// FUNCTIONS /////////////////////////////////
+function getCurrentDateAndTime() {
+  return new Date().toLocaleString();
+}
 
 function colorRandom(element) {
   let R = Math.round(Math.random() * 255);

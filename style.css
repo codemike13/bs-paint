@@ -24,8 +24,10 @@
   
 }
 #history{
- height: 750px;
-
+  display: flex;
+ height: 550px;
+ flex-direction: column;
+  align-items: center;
   grid-area: hist;
   border: 1px solid black;
   background-color: aliceblue
@@ -45,11 +47,16 @@
   align-items: center;
 }
 #save{
-
   border-radius: 15px;
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: 20px;
   justify-self: center;
+
+}
+#saveName{
+  border-radius: 15px;
+  height: 20px;
+  width: 90%;
 
 }
 .brush-selection {
