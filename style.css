@@ -1,17 +1,57 @@
 .app {
-  display: flex;
-  flex-direction: column;
-  height: 380px;
-  align-items: center;
-  justify-content: space-between;
-}
+  display: grid;
+  height: 100vh;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 
+  grid-template-areas:
+    "button pal pal pal hist"
+    "clear pal pal pal hist"
+    "mode pal pal pal hist"
+    "brush pal pal pal hist"
+    "brush pal pal pal hist"
+    "brush pal pal pal hist"
+    "brush pal pal pal hist";
+}
+#border{
+
+ height: 750px;
+  width: 750px;
+  grid-area: pal;
+  border:10px solid black;
+  border-bottom: 20px solid black;
+  border-radius: 25px;
+  
+}
+#history{
+ height: 750px;
+
+  grid-area: hist;
+  border: 1px solid black;
+  background-color: aliceblue
+}
+.canvas {
+
+  height: 750px;
+  width: 750px;
+  display: grid;
+  grid-template-rows: repeat(150, 5px);
+  grid-template-columns: repeat(150, 5px);
+}
 .headings {
+  grid-area: head;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+#save{
 
+  border-radius: 15px;
+  width: 90px;
+  height: 90px;
+  justify-self: center;
+
+}
 .brush-selection {
   height: 70px;
   display: flex;
@@ -19,18 +59,47 @@
   align-items: center;
   justify-content: space-between;
 }
+#fillColors {
+  grid-area: button;
+  border-radius: 15px;
+  width: 90px;
+  height: 90px;
+  justify-self: center;
+}
+#clearCanvas {
+  grid-area: clear;
+  border-radius: 15px;
+  width: 90px;
+  height: 90px;
+  justify-self: center;
 
-.paint {
-  height: 250px;
+}
+#brushMode {
+  grid-area: mode;
   display: flex;
+  text-align: center;
+  border-radius: 15px;
+  border:1px solid lightblack;
+  width: 90px;
+  height: 90px;
+  justify-self: center;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+justify-content: center;
+align-items: center
 }
 
+#selectMode{
+ border-radius: 15px;
+  width: 90px;
+  height: 90px;
+  justify-self: center;
+}
 .palette {
-  display: flex;
-  margin-left: -30px;
+  grid-area: brush;
+  display: grid;
+  grid-template-rows: repeat(32, 30.5px);
+  grid-template-columns: repeat(3, 30.5px);
+  justify-self: center;
 }
 
 .brush {
@@ -38,23 +107,27 @@
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
 }
 
-.current-brush, .palette-color {
-  width: 30px;
-  height: 30px;
+.palette-color {
+  border-radius: 50px;
+
   border: 1px solid black;
 }
+.current-brush {
+  border-radius: 50px;
 
-.canvas {
-  display: grid;
-  grid-template-rows: 50px 50px 50px;
-  grid-template-columns: 50px 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
   border: 1px solid black;
 }
 
 .square {
-  transition: 0.5s;
+  transition: 0.2s;
+  /* border: 1px solid lightblue; */
 }

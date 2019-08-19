@@ -2,44 +2,60 @@
 <html lang="en">
   <head>
     <title>BS Paint 1.0</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <section class="app">
-      <section class="headings">
-        <h3>BS Paint 1.0</h3>
-        <p class="message">Paint away!</p>
+      <div id="brushMode">
+        <button id="save">Save</button>
+
+        <button id="selectMode">Eraser</button>
+    </div>
+      <button id="fillColors">Fill colors</button>
+      <button id="clearCanvas">Clear Canvas</button>
+      <section class="palette">
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="palette-color"></div>
+        <div class="current-brush" value="0">
+          <img class="icon brush-icon" src="paintbrush.png" />
+        </div>
+        
       </section>
-      <section class="paint">
-        <section class="brush-selection">
-          <section class="palette">
-            <img class="icon palette-icon" src="palette.png">
-            <div class="palette-color color-1"></div>
-            <div class="palette-color color-2"></div>
-            <div class="palette-color color-3"></div>
-            <div class="palette-color color-4"></div>
-            <div class="palette-color color-5"></div>
-          </section>
-          <section class="brush">
-            <div class="current-brush color-2">
-              <img class="icon brush-icon" src="paintbrush.png">
-            </div>
-          </section>
-        </section>
-        <section class="canvas">
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-          <div class="square color-5"></div>
-        </section>
+    <section id="border">
+     <section class="canvas"></section>
       </section>
+     <section id="history"></section>
+
     </section>
     <script src="./main.js"></script>
   </body>
